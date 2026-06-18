@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #243e63;
+    font-weight: bold;
+}
+
+.separator {
+    border: none; /* Remove default border */
+    height: 2px; /* Thickness of the line */
+    background-color: #000000; /* Color of the line */
+    margin: 20px 0; /* Space above and below the line */
+}
+
+.partial-separator {
+    border: none; /* Remove default border */
+    height: 2px; /* Thickness of the line */
+    background-color: #000000; /* Color of the line */
+    width: 50%; /* Set the width to 50% or any desired value */
+    margin: 20px auto; /* Center the line */
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.25;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 16px;
+}
+
+span {
+      color: #0077B6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    padding: 16px;
+}
+
+.body {
+    overflow-x: hidden;
+}
+
+
+/* NAVIGATION */
+
+.section__discover{
+    background-color: #f1f5f9;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #0077B6;
+}
+
+.nav__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 16px;
+    max-width: 1200px;
+}
+
+.nav__logo--img {
+    max-width: 100%;
+    height: 100px;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav__logo--title {
+    color: #0077B6;  
+    font-weight: 900;
+    font-size: 24px;
+    margin-left: 12px;
+    padding-bottom: 2px;
+    letter-spacing: 0.6px;
+}
+
+.nav-links--list-primary {
+    background-color: #0077B6;
+    color: white;
+    border-radius: 50px;
+    padding: 8px 20px;
+}
+
+/* HEADER */
+
+/**SECTION__FLY**/
+
+
+.Philippines {
+    background: linear-gradient(to right, #0038A8, #C8102E, #FCD100);
+    -webkit-background-clip: text; /* For Safari */
+    -webkit-text-fill-color: transparent; /* For Safari */
+    color: transparent; /* For other browsers */
+}   
+
+.section__fly {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}   
+
+.section__fly--content {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 16px; 
+}
+
+.section__fly--content input,
+.section__fly--content button {
+    border-radius: 8px; /* Change this value to adjust the roundness */
+    padding: 10px; /* Optional: Add some padding for better appearance */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    outline: none; /* Optional: Remove the default outline */
+}
+
+.section__fly--content button {
+    background-color: #0077B6; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.section__fly--content button:hover {
+    background-color: #005f8a; /* Darker shade on hover */
+}
+
+/**SECTION__DISCOVER**/
+
+.header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.header__content--title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.Filo {
+    font-weight: bolder;
+    color: #0077B6;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.scroll__container {
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width of the viewport */
+    max-width: 600px; /* Set a max width for the gallery */
+    margin: auto; /* Center the gallery */
+    margin-left: 80px;
+    margin-right: 50px;
+}
+
+.header__img--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto; /* Allow horizontal scrolling */    
+    scroll-snap-type: x mandatory; /* Enable snap effect */
+    width: 100%; /* Full width of the viewport */
+    transition: transform 0.3s ease;
+    margin-bottom: 32px;
+    border-radius: 16px;
+}
+
+.scroll-image {
+    width: auto; /* Each image takes full width of the container */
+    height: auto;
+    max-width: 100%; /* Ensure images don't exceed container width */
+    max-height: 100%;
+    scroll-snap-align: start; /* Snap to the start of each image */
+    opacity: 1; /* Initial opacity */
+    transition: 0.3s ease;
+    padding : 0 8px;
+    object-fit: cover; /* or contain, depending on your needs */
+    border-radius: 32px;
+}
+
+.scroll__container:hover .scroll-image {
+    transform: scale(1.1) translateY(-20px) translateX(-20px); /* Scale the image up by 10% and move it up by 20px on hover */
+}
+.scroll-image.active {
+    display: block; /* Show the active image */
+}
+
+.arrow {
+    position: absolute; /* Position arrows absolutely within the container */
+    font-size: 24px;
+    width: 50px; /* For button arrows */
+    height: 50px; /* For button arrows */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for centering */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer */
+    display: none; /* Hide arrows by default */
+}
+
+.left-arrow {
+    left: 10px; /* Position on the left */
+}
+
+.right-arrow {
+    right: 10px; /* Position on the right */
+}
+
+.scroll-container:hover .arrow {
+    display: block; /* Show arrows when hovering over the container */
+}
+
+
+
+
+/* MEDIA */
+
+@media (max-width: 768px) {
+    .scroll-image {
+        width: 100%; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        height: auto; /* Adjust height for smaller screens */
+    }
+}
