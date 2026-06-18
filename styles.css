@@ -9,7 +9,7 @@
     font-weight: bold;
 }
 
-.separator {
+.seperator {
     border: none; /* Remove default border */
     height: 2px; /* Thickness of the line */
     background-color: #000000; /* Color of the line */
@@ -228,9 +228,14 @@ nav ul li a {
     border-radius: 32px;
 }
 
-.scroll__container:hover .scroll-image {
+.scroll__container:hover  {
     transform: scale(1.1) translateY(-20px) translateX(-20px); /* Scale the image up by 10% and move it up by 20px on hover */
 }
+
+.scroll-image {
+    display: none; /* Hide all images by default */
+}
+
 .scroll-image.active {
     display: block; /* Show the active image */
 }
@@ -256,7 +261,7 @@ nav ul li a {
     right: 10px; /* Position on the right */
 }
 
-.scroll-container:hover .arrow {
+.scroll__container:hover .arrow {
     display: block; /* Show arrows when hovering over the container */
 }
 
@@ -275,4 +280,26 @@ nav ul li a {
     img {
         height: auto; /* Adjust height for smaller screens */
     }
+}
+
+@media (max-width: 768px) {
+  .nav__row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container {
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .scroll__container {
+    margin: 0;
+  }
 }
