@@ -1,58 +1,137 @@
+// 
+// DESTINATION IMAGE CAROUSEL
+// 
 
-//**ARROW INTERACTION_HEADER**//
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+const images = document.querySelectorAll(".scroll-image");
 
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-const images = document.querySelectorAll('.scroll-image');
 let currentIndex = 0;
+let carouselInterval;
 
-// Show the first image
-images[currentIndex].style.display = 'block';
+// Displays only the selected image
+function showImage(index) {
+    images.forEach((image) => {
+        image.style.display = "none";
+    });
 
-leftArrow.addEventListener('click', () => {
-    images[currentIndex].style.display = 'none'; // Hide current image
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1; // Move to the previous image
-    images[currentIndex].style.display = 'block'; // Show new image
+    images[index].style.display = "block";
+}
+
+// Displays the previous image
+function showPreviousImage() {
+    currentIndex =
+        currentIndex === 0
+            ? images.length - 1
+            : currentIndex - 1;
+
+    showImage(currentIndex);
+    restartCarousel();
+}
+
+// Displays the next image
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+
+    showImage(currentIndex);
+    restartCarousel();
+}
+
+// Automatically changes the image every four seconds
+function startCarousel() {
+    carouselInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }, 4000);
+}
+
+// Restarts the timer after an arrow is clicked
+function restartCarousel() {
+    clearInterval(carouselInterval);
+    startCarousel();
+}
+
+if (images.length > 0 && leftArrow && rightArrow) {
+    showImage(currentIndex);
+
+    leftArrow.addEventListener("click", showPreviousImage);
+    rightArrow.addEventListener("click", showNextImage);
+
+    startCarousel();
+}
+
+
+// ========================================
+// FLIGHT SEARCH FORM
+// ========================================
+
+const flightForm = document.getElementById("flightForm");
+const fromInput = document.getElementById("from");
+const toInput = document.getElementById("to");
+const departureDateInput = document.getElementById("departureDate");
+const returnDateInput = document.getElementById("returnDate");
+
+// Prevents users from selecting a past departure date
+const today = new Date().toISOString().split("T")[0];
+
+departureDateInput.min = today;
+returnDateInput.min = today;
+
+// Makes sure the return date is not before the departure date
+departureDateInput.addEventListener("change", () => {
+    returnDateInput.min = departureDateInput.value;
+
+    if (returnDateInput.value < departureDateInput.value) {
+        returnDateInput.value = "";
+    }
 });
 
-rightArrow.addEventListener('click', () => {
-    images[currentIndex].style.display = 'none'; // Hide current image
-    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0; // Move to the next image
-    images[currentIndex].style.display = 'block'; // Show new image
+flightForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const from = fromInput.value.trim();
+    const to = toInput.value.trim();
+    const departureDate = departureDateInput.value;
+    const returnDate = returnDateInput.value;
+
+    if (returnDate < departureDate) {
+        alert("The return date cannot be before the departure date.");
+        return;
+    }
+
+    console.log(`Searching for flights from ${from} to ${to}.`);
+    console.log(`Departure date: ${departureDate}`);
+    console.log(`Return date: ${returnDate}`);
+
+    // Flight API logic can be added here later.
 });
 
-// Show the first image
-images[currentIndex].style.display = 'block';
+// ========================================
+// FOOTER
+// ========================================
 
-setInterval(() => {
-    // Hide the current image
-    images[currentIndex].style.display = 'none';
-    
-    // Update the index to the next image
-    currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
-    
-    // Show the new image
-    images[currentIndex].style.display = 'block';
-}, 4000); // Change image every 4 seconds
+const currentYear = document.getElementById("currentYear");
+const newsletterForm = document.getElementById("newsletterForm");
+const newsletterEmail = document.getElementById("newsletterEmail");
+const newsletterMessage = document.getElementById(
+    "newsletterMessage"
+);
 
-//**FLIGHT SEARCH FORM SUBMISSION FORM SUBMISSION. HANDLING**//
+// Automatically displays the current year
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
 
-document.getElementById('flightForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+// Handles the newsletter form
+if (newsletterForm) {
+    newsletterForm.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    const from = document.getElementById('from').value;
-    const to = document.getElementById('to').value;
-    const departureDate = document.getElementById('departureDate').value;
-    const returnDate = document.getElementById('returnDate').value;
+        const email = newsletterEmail.value.trim();
 
-    console.log(`Searching flights from ${from} to ${to}`);
-    console.log(`Departure Date: ${departureDate}`);
-    console.log(`Return Date: ${returnDate}`);
-    
-    // Here you can add logic to fetch flight data from an API or database
-});
+        newsletterMessage.textContent =
+            `Thank you! Travel updates will be sent to ${email}.`;
 
-function setReturnDate() {
-    // Set the value of the input field to a specific date (YYYY-MM-DD format)
-    document.getElementById('returnDate').value = '2026-02-14'; // Change this date as needed
+        newsletterForm.reset();
+    });
 }

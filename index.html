@@ -1,97 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filo Travel and Tours</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
+    <title>Filo Travel and Tours</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
 </head>
 
 <body>
     <nav>
-        <div class="nav__row">    
+        <div class="nav__row">
             <div class="nav__logo">
-                    <img class="nav__logo--img" src="assets/Filo Travel and Tours Logo.png" alt="Filo Travel and Tours Logo">
-                    <p class="nav__logo--title">Filo Travel and Tours</p>
+                <img class="nav__logo--img" src="assets/Filo Travel and Tours Logo.png"
+                    alt="Filo Travel and Tours logo">
+
+                <p class="nav__logo--title">
+                    Filo Travel and Tours
+                </p>
             </div>
-                    <ul>
-                    <li><a class="nav-link" href="#home">Home</a></li>
-                    <li><a class="nav-link" href="#about">About Us</a></li>
-                    <li><a class="nav-link" href="#services">Services</a></li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
-                    <li><a class="nav-links--list-primary" href="#fly now">Fly Now!</a></li>
-                </ul>
+
+            <ul>
+                <li>
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+                <li>
+                    <a class="nav-links--list-primary" href="#fly-now">
+                        Fly Now!
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
-    
+
     <hr class="seperator">
-    
-    <header>
-       <section class="section__fly">
-        <div class="section__title">
-            <h1>Come and discover the <span class="Philippines">Philippines, the Pearl of the Orient Seas.</span></h1>
-            <h2>Checkout things to do in Boracay, Palawan and other destinations!</h2>
-        </div>    
-        <div class="section__fly--content">
-        <form id="flightForm">
-                <label for="from">Fly From:</label>
-                <input type="text" id="from" name="from" required placeholder="Departure City">
 
-                <label for="to">Fly To:</label>
-                <input type="text" id="to" name="to" required placeholder="Destination City">
+    <header id="home">
+        <section class="section__fly" id="fly-now">
+            <div class="section__title">
+                <h1>
+                    Come and discover the
+                    <span class="Philippines">
+                        Philippines, the Pearl of the Orient Seas.
+                    </span>
+                </h1>
 
-                <label for="departureDate">Departure Date:</label>
-                <input type="date" id="departureDate" name="departureDate" required placeholder="when do you want to fly?" value="">
+                <h2>
+                    Check out things to do in Boracay, Palawan,
+                    and other destinations!
+                </h2>
+            </div>
 
-                <label for="returnDate">Return Date:</label>
-                <input type="date" id="returnDate" name="returnDate" required placeholder="Return Date" value="">
+            <div class="section__fly--content">
+                <form id="flightForm">
+                    <label for="from">Fly From:</label>
+                    <input type="text" id="from" name="from" placeholder="Departure City" required>
 
-                <button type="submit">Search Flights</button>
-            </form>
-        </div>
+                    <label for="to">Fly To:</label>
+                    <input type="text" id="to" name="to" placeholder="Destination City" required>
+
+                    <label for="departureDate">
+                        Departure Date:
+                    </label>
+                    <input type="date" id="departureDate" name="departureDate" required>
+
+                    <label for="returnDate">
+                        Return Date:
+                    </label>
+                    <input type="date" id="returnDate" name="returnDate" required>
+
+                    <button type="submit">
+                        Search Flights
+                    </button>
+                </form>
+            </div>
         </section>
 
         <hr class="partial-separator">
 
-        <section class="section__discover">   
-        <div class="container">
-            <div class="header__content">
-                <h1 class="header__content--title">Explore Asia with <span class="Filo"> Filo Travel and Tours!</span></h1>
-                <p class="header__content--description">Where your next adventure begins. Discover extraordinary destinations, hand-picked deals, and once-in-a-lifetime experiences.</p>
-                <a href="#services" class="header__content--button">Discover More</a>
-            </div>
-        <div class="scroll__container">
-            <div class="header__img--wrapper">
-                <img src="assets/scroll-image 1.jpeg" alt="Travel img 1" class="scroll-image">
-                <img src="assets/scroll-image 2.jpeg" alt="Travel img 2" class="scroll-image" style="display: active;">
-                <img src="assets/scroll-image 3.jpeg" alt="Travel img 3" class="scroll-image" style="display: active;">
-                <img src="assets/scroll-image 4.jpeg" alt="Travel img 4" class="scroll-image" style="display: active;">
-                <img src="assets/scroll-image 5.jpeg" alt="Travel img 5" class="scroll-image" style="display: active;">
-                <img src="assets/scroll image 6.jpeg" alt="Travel img 5" class="scroll-image" style="display: active;">
-                <img src="assets/scroll image 7.jpeg" alt="Travel img 5" class="scroll-image" style="display: active;">
-                <img src="assets/scroll image 8.jpeg" alt="Travel img 5" class="scroll-image" style="display: active;">
-                <img src="assets/scroll image 9.jpeg" alt="Travel img 5" class="scroll-image" style="display: active;">
-                <img src="assets/scroll image 10.jpeg" alt="Travel img 5" class="scroll-image" style="display: active;">                                
-                <button class="arrow left-arrow">&#10094;</button>
-                <button class="arrow right-arrow">&#10095;</button>
-        </div>
-        <div class="scroll__container--text">
-            <h2 class="scroll__container--text">Two Destinations. One Unforgettable Philippine Escape. 🇵🇭✨
-                El Nido, Palawan – Where adventure meets jaw-dropping beauty and Boracay – Where fun never sleeps</h2>
+        <section class="section__discover" id="about">
+            <div class="container">
+                <div class="header__content">
+                    <h2 class="header__content--title">
+                        Explore Asia with
+                        <span class="Filo">
+                            Filo Travel and Tours!
+                        </span>
+                    </h2>
 
-        </div>
-    </div>
+                    <p class="header__content--description">
+                        Where your next adventure begins. Discover
+                        extraordinary destinations, hand-picked deals,
+                        and once-in-a-lifetime experiences.
+                    </p>
+
+                    <a href="#services" class="header__content--button">
+                        Discover More
+                    </a>
+                </div>
+
+                <div class="scroll__container">
+                    <div class="header__img--wrapper">
+                        <img src="assets/scroll-image-01.jpg" alt="Philippine travel destination" class="scroll-image">
+
+                        <img src="assets/scroll-image-02.jpg" alt="Beautiful Philippine landscape" class="scroll-image">
+
+                        <img src="assets/scroll-image-03.jpg" alt="Tropical beach destination" class="scroll-image">
+
+                        <img src="assets/scroll-image-04.jpg" alt="Philippine island destination" class="scroll-image">
+
+                        <img src="assets/scroll-image-05.jpg" alt="Scenic Philippine destination" class="scroll-image">
+
+                        <img src="assets/scroll-image-06.jpg" alt="El Nido travel destination" class="scroll-image">
+
+                        <img src="assets/scroll-image-07.jpg" alt="Palawan travel destination" class="scroll-image">
+
+                        <img src="assets/scroll-image-08.jpg" alt="Boracay travel destination" class="scroll-image">
+
+                        <img src="assets/scroll-image-09.jpg" alt="Philippine beach resort" class="scroll-image">
+
+                        <img src="assets/scroll-image-10.jpg" alt="Philippine island escape" class="scroll-image">
+
+                        <button type="button" class="arrow left-arrow" aria-label="Show previous destination">
+                            &#10094;
+                        </button>
+
+                        <button type="button" class="arrow right-arrow" aria-label="Show next destination">
+                            &#10095;
+                        </button>
+                    </div>
+
+                    <div class="scroll__container--text">
+                        <h2>
+                            Two destinations. One unforgettable
+                            Philippine escape. 🇵🇭✨
+                        </h2>
+
+                        <p>
+                            El Nido, Palawan—where adventure meets
+                            jaw-dropping beauty—and Boracay, where
+                            fun never sleeps.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
     </header>
 
     <main>
-        
+        <section id="services">
+            <!-- Add your services content here. -->
+        </section>
+
+        <section id="contact">
+            <!-- Add your contact content here. -->
+        </section>
     </main>
 
-</body>
+    <footer class="footer" id="contact">
+        <div class="footer__container">
+            <div class="footer__column footer__brand">
+                <div class="footer__logo">
+                    <img src="assets/Filo Travel and Tours Logo.png" alt="Filo Travel and Tours logo">
 
+                    <h2>Filo Travel and Tours</h2>
+                </div>
+
+                <p>
+                    Discover beautiful destinations, exciting adventures,
+                    and unforgettable experiences across the Philippines.
+                </p>
+            </div>
+
+            <div class="footer__column">
+                <h3>Quick Links</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#fly-now">Search Flights</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column">
+                <h3>Destinations</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#about">El Nido</a></li>
+                    <li><a href="#about">Boracay</a></li>
+                    <li><a href="#about">Palawan</a></li>
+                    <li><a href="#about">Cebu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column">
+                <h3>Travel Updates</h3>
+
+                <p>
+                    Enter your email to receive destination ideas and
+                    travel deals.
+                </p>
+
+                <form class="newsletter" id="newsletterForm">
+                    <label class="visually-hidden" for="newsletterEmail">
+                        Email address
+                    </label>
+
+                    <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required>
+
+                    <button type="submit">
+                        Subscribe
+                    </button>
+                </form>
+
+                <p class="newsletter__message" id="newsletterMessage" aria-live="polite"></p>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Filo Travel and Tours. All rights reserved.
+            </p>
+
+            <a href="#home" class="footer__top-link">
+                Back to top ↑
+            </a>
+        </div>
+    </footer>
 
     <script src="index.js"></script>
+</body>
+
 </html>
